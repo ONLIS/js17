@@ -13,7 +13,7 @@
     <section class="container">
         <div class="row p-3" style="border: 1px solid black; border-radius: 5px;">
             <div class="col-12">
-                <form action="#">
+                <form action="#" id="dataForm">
                     <div class="row">
                         <div class="col-12 col-md-6 mb-3">
                             <label for="inputSername" class="form-label">Фамилия</label>
@@ -36,14 +36,14 @@
                         </div>
                         <div class="col-12 col-md-6 d-flex align-items-center mb-3">
                             <div class="form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                                <label class="form-check-label" for="flexSwitchCheckChecked">Официальное трудоустройство</label>
+                                <input class="form-check-input" type="checkbox" role="switch" id="checkOfficial" checked>
+                                <label class="form-check-label" for="checkOfficial">Официальное трудоустройство</label>
                             </div>
                         </div>
                         <div class="col-12 col-md-6 mb-3">
-                            <label for="selectSpec" class="form-label">Специальность</label>
+                            <label for="selectSpec" class="form-label">Профессия</label>
                             <select class="form-select" id="selectSpec">
-                                <option selected>выберите специальность</option>
+                                <option value="" selected>выберите профессию</option>
                                 <option value="driver">Водитель</option>
                                 <option value="cook">Повар</option>
                             </select>
@@ -88,7 +88,9 @@
                                 <label class="btn btn-outline-success" for="rang6">6</label>                        
                             </div>
                         </div>
-                        <div class="col-12 d-grid mt-3"><button type="submit" class="btn btn-outline-success">сохранить</button></div>
+                        <div class="col-12 d-grid mt-3">
+                            <button type="submit" class="btn btn-outline-success" id="saveButton" disabled>сохранить</button>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -98,27 +100,15 @@
                 <h4>Список сотрудников</h4>
                 <table class="table table-bordered table-hover mt-2">
                     <thead>
-                        <th class="text-center">1</th>
-                        <th class="text-center">2</th>
-                        <th class="text-center">3</th>
-                        <th class="text-center">4</th>
+                        <th class="text-center">Фамилия</th>
+                        <th class="text-center">Имя</th>
+                        <th class="text-center">Дата рождения</th>
+                        <th class="text-center">Номер телефона</th>
+                        <th class="text-center">Официальное трудоустройство</th>
+                        <th class="text-center">Профессия</th>
                         <th class="text-center">Действие</th>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-center">1</td>
-                            <td class="text-center">2</td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">4</td>
-                            <td class="d-flex justify-content-center"><button class="btn btn-outline-danger">удалить</button></td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">1</td>
-                            <td class="text-center">2</td>
-                            <td class="text-center">3</td>
-                            <td class="text-center">4</td>
-                            <td class="d-flex justify-content-center"><button class="btn btn-outline-danger">удалить</button></td>
-                        </tr>
+                    <tbody id="tableBody">
                     </tbody>
                 </table>
             </div>
