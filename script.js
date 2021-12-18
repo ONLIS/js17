@@ -31,6 +31,9 @@ class Staff {
     this._official = official;
     this._profession = profession;
   }
+  deleteThis(index) {
+    staffArray.splice(index, 1);
+  }
   get sername() {
     return this._sername;
   }
@@ -103,6 +106,11 @@ class Driver extends Staff {
   get experience() {
     return this._experience;
   }
+  get properties() {
+    return (
+      "категория: " + this._category + "<br>стаж вождения: " + this._experience
+    );
+  }
 }
 
 class Cook extends Staff {
@@ -131,6 +139,9 @@ class Cook extends Staff {
   }
   get rang() {
     return this._rang;
+  }
+  get properties() {
+    return "специализация: " + this._speciality + "<br>разряд: " + this._rang;
   }
 }
 
@@ -192,14 +203,20 @@ const allDataTest = () => {
 };
 
 const render = () => {
+  tableBody.innerHTML = "";
   localStorage.setItem("staff", JSON.stringify(staffArray));
   staffArray.forEach((item, index) => {
     const tr = document.createElement("tr");
-    const button = `<button type="button" class="btn btn-outline-danger">удалить</button>`;
+    const button = `<button type="button" class="btn btn-outline-danger" onclick="deleteThis(${index})">удалить</button>`;
     tr.classList.add("text-center");
-    tr.innerHTML = `<td>${item.sername}</td><td>${item.name}</td><td>${item.bDate}</td><td>${item.phone}</td><td>${item.official}</td><td>${item.profession}</td>`;
+    tr.innerHTML = `<td>${item.sername}</td><td>${item.name}</td><td>${item.bDate}</td><td>${item.phone}</td><td>${item.official}</td><td>${item.profession}</td><td>${item.properties}</td><td>${button}</td>`;
     tableBody.append(tr);
   });
+};
+const deleteThis = (index) => {
+  const item = staffArray[index];
+  item.deleteThis(index);
+  render();
 };
 //=======================================================================
 if (localStorage.getItem("staff") !== null) {
