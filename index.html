@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Lesson 17</title>
@@ -43,11 +43,50 @@
                         <div class="col-12 col-md-6 mb-3">
                             <label for="selectSpec" class="form-label">Специальность</label>
                             <select class="form-select" id="selectSpec">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option selected>выберите специальность</option>
+                                <option value="driver">Водитель</option>
+                                <option value="cook">Повар</option>
                             </select>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3 d-none spec driver">
+                            <label class="form-label">Категория</label>
+                            <div>
+                                <input type="radio" class="btn-check" name="inputDriverCategory" id="catA" value="A" autocomplete="off" checked>
+                                <label class="btn btn-outline-success" for="catA">A</label>
+                                
+                                <input type="radio" class="btn-check" name="inputDriverCategory" id="catB" value="B" autocomplete="off">
+                                <label class="btn btn-outline-danger" for="catB">B</label>                        
+                                
+                                <input type="radio" class="btn-check" name="inputDriverCategory" id="catC" value="C" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="catC">C</label>                        
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3 d-none spec driver">
+                            <label for="inputExperience" class="form-label">Стаж вождения</label>
+                            <input type="text" class="form-control" id="inputExperience" placeholder="введите стаж">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3 d-none spec cook">
+                            <label for="inputCookSpeciality" class="form-label">Специализация повара</label>
+                            <input type="text" class="form-control" id="inputCookSpeciality" placeholder="введите специализацию">
+                        </div>
+                        <div class="col-12 col-md-6 mb-3 d-none spec cook">
+                            <label class="form-label">Разряд</label>
+                            <div>
+                                <input type="radio" class="btn-check" name="inputCookRang" id="rang2" value="2" autocomplete="off" checked>
+                                <label class="btn btn-outline-success" for="rang2">2</label>
+                                
+                                <input type="radio" class="btn-check" name="inputCookRang" id="rang3" value="3" autocomplete="off">
+                                <label class="btn btn-outline-success" for="rang3">3</label>                        
+                                
+                                <input type="radio" class="btn-check" name="inputCookRang" id="rang4" value="4" autocomplete="off">
+                                <label class="btn btn-outline-success" for="rang4">4</label>                        
+                                
+                                <input type="radio" class="btn-check" name="inputCookRang" id="rang5" value="5" autocomplete="off">
+                                <label class="btn btn-outline-success" for="rang5">5</label>                        
+                                
+                                <input type="radio" class="btn-check" name="inputCookRang" id="rang6" value="6" autocomplete="off">
+                                <label class="btn btn-outline-success" for="rang6">6</label>                        
+                            </div>
                         </div>
                         <div class="col-12 d-grid mt-3"><button type="submit" class="btn btn-outline-success">сохранить</button></div>
                     </div>
